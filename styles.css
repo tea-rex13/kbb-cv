@@ -1,0 +1,71 @@
+/* main (hero) background */
+.bgimage {
+    height: 100vh;
+    background: linear-gradient(to bottom right, #d52a9f, #a32bab, #22d5e2);
+    background-size: cover;
+    position: relative;
+}
+
+/* text above main (hero) background */
+.hero_title {
+    font-size: 4.5rem;
+}
+
+.hero_desc {
+    font-size: 2rem;
+}
+
+.hero-text {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+
+.imageProfilePage{
+    width: 100%;
+}
+
+/* skills cards section */
+.skillsText.card {
+    height: 280px;
+    cursor: pointer;
+}
+
+.skillsIcon {
+    width: 15%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.card-title {
+    text-align: center;
+}
+
+.card:hover .card-body {
+    color: #a32bab
+}
+
+.skillsText:hover {
+    border: 1px solid #a32bab
+}
+
+/* display background colour on navbar scrolling */
+.navbarScroll.navbarDark {
+    background-color: #a32bab;
+}
+
+/* spacing and padding to sections */
+#profile, #skills {
+    margin-top: 4rem;
+    padding-bottom: 4rem;
+}
+
+/* font */
+* {
+    font-family: 'Courier New', Courier, monospace;
+}
+
