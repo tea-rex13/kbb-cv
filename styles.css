@@ -1,7 +1,7 @@
 /* main (hero) background */
 .bgimage {
     height: 100vh;
-    background: linear-gradient(to bottom right, #d52a9f, #a32bab, #22d5e2);
+    background: linear-gradient(to bottom right, #000000, #1C20AF, #4955D4);
     background-size: cover;
     position: relative;
 }
@@ -52,11 +52,11 @@
 }
 
 .card:hover .card-body {
-    color: #a32bab
+    color: #000000
 }
 
 .skillsText:hover {
-    border: 1px solid #a32bab
+    border: 1px solid #000000
 }
 
 /* education */
@@ -76,7 +76,7 @@
 
 /* display background colour on navbar scrolling */
 .navbarScroll.navbarDark {
-    background-color: #a32bab;
+    background-color: #000000;
 }
 
 /* spacing and padding to sections */
@@ -111,7 +111,7 @@
     cursor: pointer;
 }
 .fa-instagram:hover,.fa-twitter:hover,.fa-linkedin:hover, .fa-github:hover {
-    color: #22d5e2;
+    color: #4955D4;
 }
 .fab {
     color: #ffffff;
@@ -119,7 +119,7 @@
 
 /* footer styling */
 #footer {
-    background-color: #a32bab;
+    background-color: #1C20AF;
     text-align: center;
 }
 
@@ -157,7 +157,7 @@
   left: calc(50% - 9px);
   width: 18px;
   height: 18px;
-  background-color: #d52a9f;
+  background-color: #1C20AF;
   border: 1px solid rgb(48,49,51);
   border-radius: 50%;
   box-shadow: inset 0 0 0 2px white,
