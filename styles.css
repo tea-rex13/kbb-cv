@@ -5,10 +5,10 @@
     background-size: cover;
     position: relative;
 }
-
 /* text above main (hero) background */
 .hero_title {
     font-size: 4.5rem;
+    font-family: "roboto",sans-serif;
 }
 
 .hero_desc {
@@ -27,7 +27,6 @@
 .imageProfilePage{
     width: 100%;
 }
-
 /* skills cards section */
 .skillsText.card {
     height: 280px;
@@ -52,31 +51,32 @@
 }
 
 .card:hover .card-body {
-    color: #000000
+    color: #150453
 }
 
 .skillsText:hover {
-    border: 1px solid #000000
+    border: 4px solid #150453
 }
 
 /* education */
 .eduIcon {
-    width: 40%;
-    display: block;
+    width: 20%;
+    display: inline-block;
     margin-left: auto;
     margin-right: auto;
 }
 
 .eduIcon2 {
-    width: 30%;
+    width: 20%;
     display: block;
     margin-left: auto;
     margin-right: auto;
 }
 
+
 /* display background colour on navbar scrolling */
 .navbarScroll.navbarDark {
-    background-color: #000000;
+    background-color: #2e74bb;
 }
 
 /* spacing and padding to sections */
@@ -87,7 +87,7 @@
 
 /* font */
 * {
-    font-family: 'Courier New', Courier, monospace;
+    font-family: "montserrat", sans-serif, monospace;
 }
 
 .card-img-top {
@@ -102,9 +102,11 @@
     padding-top: 4rem;
 }
 #contact {
-    padding-bottom: 4rem;
+    padding-bottom: 5rem;
 }
-
+#projects{
+    padding: 1em
+}
 /* social media icons styling */
 .social-icons {
     font-size: 36px;
@@ -118,10 +120,11 @@
 }
 
 /* footer styling */
-#footer {
-    background-color: #1C20AF;
+/* #footer {
+   
+    /* background-color: #2e74bb; */
     text-align: center;
-}
+} */
 
 /* dividers */
 .wrapper
