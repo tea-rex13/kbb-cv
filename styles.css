@@ -51,7 +51,9 @@
 }
 
 .card:hover .card-body {
+    
     color: #150453
+    
 }
 
 .skillsText:hover {
