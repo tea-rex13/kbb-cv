@@ -31,6 +31,8 @@
 .skillsText.card {
     height: 280px;
     cursor: pointer;
+    border-style: solid; /* Add border style */
+    border-width: 2px; /* Add border width */
 }
 
 .skillsIcon {
@@ -56,11 +58,22 @@
     
 }
 
-.skillsText:hover {
-    border: 4px solid #264e9f;
-    transition: 0.5ss;
+/* Define a keyframe animation for the rainbow effect */
+@keyframes rainbow {
+  0% { border-color: red; }
+  14% { border-color: orange; }
+  28% { border-color: yellow; }
+  42% { border-color: green; }
+  56% { border-color: blue; }
+  70% { border-color: indigo; }
+  84% { border-color: violet; }
+  100% { border-color: red; }
 }
 
+/* Apply the animation on hover */
+.skillsText.card:hover {
+  animation: rainbow 4s linear infinite;
+}
 /* education */
 .eduIcon {
     width: 20%;
