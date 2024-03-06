@@ -1,0 +1,229 @@
+/* main (hero) background */
+.bgimage {
+    height: 100vh;
+    background: linear-gradient(to bottom right, #1B72A0, #6AA7C9, #B9DCF2);
+    background-size: cover;
+    position: relative;
+}
+/* text above main (hero) background */
+.hero_title {
+    font-size: 4rem;
+    font-family: "Roboto",sans-serif;
+}
+
+.hero_desc {
+    font-size: 2rem;
+}
+
+.hero-text {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+
+.imageProfilePage{
+    width: 100%;
+}
+/* skills cards section */
+.skillsText.card {
+    height: 280px;
+    cursor: pointer;
+    border-style: solid; /* Add border style */
+    border-width: 2px; /* Add border width */
+}
+
+.skillsIcon {
+    width: 15%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.servicesIcon {
+    font-size: 36px;
+    text-align: center;
+    width: 100%;
+}
+
+.card-title {
+    text-align: center;
+}
+
+.card:hover .card-body {
+    
+    color: #150453
+    
+}
+
+/* Define a keyframe animation for the rainbow effect */
+@keyframes rainbow {
+  0% { border-color: red; }
+  14% { border-color: orange; }
+  28% { border-color: yellow; }
+  42% { border-color: green; }
+  56% { border-color: blue; }
+  70% { border-color: indigo; }
+  84% { border-color: violet; }
+  100% { border-color: red; }
+}
+
+/* Apply the animation on hover */
+.skillsText.card:hover {
+  animation: rainbow 4s linear infinite;
+}
+/* education */
+.eduIcon {
+    width: 20%;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.eduIcon2 {
+    width: 20%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+/* display background colour on navbar scrolling */
+.navbarScroll.navbarDark {
+    background-color: #2e74bb;
+}
+
+/* spacing and padding to sections */
+#profile, #skills {
+    margin-top: 4rem;
+    padding-bottom: 4rem;
+}
+
+/* font */
+* {
+    font-family: "montserrat", sans-serif, monospace;
+}
+
+.card-img-top {
+    width: 100%;
+    height: 15vw;
+    object-fit: cover;
+}
+
+/* spacing on all sections: */
+#about, #services, #portfolio, #contact {
+    margin-top: 4rem;
+    padding-top: 4rem;
+}
+#contact {
+    padding-bottom: 5rem;
+
+}
+#projects{
+    padding: 1em
+}
+/* social media icons styling */
+.social-icons {
+    font-size: 36px;
+    cursor: pointer;
+ }
+
+.fab {
+    color: #ffffff;
+} 
+
+
+Result Skip Results Iframe
+EDIT ON
+.fab {
+  color: inherit;
+  text-decoration: none;
+}
+
+.fab{
+  background:
+    linear-gradient(
+      to right,
+      rgba(100, 200, 200, 1),
+      rgba(100, 200, 200, 1)
+    ),
+    linear-gradient(
+      to right,
+      rgba(255, 0, 0, 1),
+      rgba(255, 0, 180, 1),
+      rgba(0, 100, 200, 1)
+  );
+  background-size: 100% 3px, 0 3px;
+  background-position: 100% 100%, 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 400ms;
+}
+
+.fab:hover {
+  background-size: 0 3px, 100% 3px;
+}
+
+hr.gradient {
+    height: 3px;
+    border: none;
+    border-radius: 6px;
+    background: linear-gradient(
+      90deg,
+      rgba(13, 8, 96, 1) 0%,
+      rgba(255, 0, 0, 1) 21%,
+      rgba(255, 0, 180, 1) 51%,
+      rgba(0, 100, 200, 1) 100%
+    );
+  }
+
+/* footer styling */
+#footer{
+   
+    background-color: #2e74bb;
+    text-align: center;
+} 
+
+/* dividers */
+/* Rounded border */
+hr.rounded {
+    border-top: 8px solid #bbb;
+    border-radius: 5px;
+  }
+
+.divider
+{
+  position: relative;
+  margin-top: 40px;
+  height: 1px;
+}
+
+.div-transparent:before
+{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 5%;
+  right: 5%;
+  width: 90%;
+  height: 1px;
+  background-image: linear-gradient(to right, transparent, rgb(48,49,51), transparent);
+}
+
+.div-dot:after
+{
+  content: "";
+  position: absolute;
+  z-index: 1;
+  top: -9px;
+  left: calc(50% - 9px);
+  width: 18px;
+  height: 18px;
+  background-color: #1C20AF;
+  border: 1px solid rgb(48,49,51);
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 2px white,
+          0 0 0 4px white;
+}
