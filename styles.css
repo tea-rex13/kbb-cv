@@ -25,10 +25,13 @@
 }
 
 .imageProfilePage {
-  max-width: 100%;      /* still responsive in width */
-  max-height: 440px;        /* responsive in height */
-  object-fit: cover;    /* crop/scale so it fills the box */
+  max-width: 100%;      /* remain responsive in width */
+  height: 400px;        /* a fixed height you choose */
+  object-fit: cover;    /* ensures the image still fills/crops nicely */
+  display: block;
+  margin: 0 auto;       /* center it horizontally in its col */
 }
+
 /* skills cards section */
 .skillsText.card {
     height: 280px;
@@ -187,16 +190,24 @@ hr.gradient {
     background-color: #2e74bb;
     text-align: center;
 } 
-/* back to top */
 .back-to-top {
   position: fixed;
   bottom: 1.5rem;
   right: 1.5rem;
-  background: var(--brand-blue);
-  color: #1e4c7a;
+  background: #2e74bb; /* A solid background colour */
+  color: #ffffff; /* White text for better contrast */
   padding: 0.5rem 1rem;
   border-radius: 4px;
   text-decoration: none;
+  opacity: 0; /* Hidden by default */
+  visibility: hidden; /* Also hide from assistive technologies */
+  transition: opacity 0.3s, visibility 0.3s; /* Add a smooth fade effect */
+}
+
+/* This class will be added by JavaScript to show the button */
+.back-to-top.show {
+  opacity: 1;
+  visibility: visible;
 }
 
 /* dividers */
