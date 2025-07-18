@@ -35,9 +35,7 @@
 /* skills cards section */
 .skillsText.card {
     height: 280px;
-    cursor: pointer;
-    border-style: solid; /* Add border style */
-    border-width: 2px; /* Add border width */
+    cursor: pointer;  
 }
 
 .skillsIcon {
@@ -74,11 +72,18 @@
   84% { border-color: violet; }
   100% { border-color: red; }
 }
+/*
+  This new class can be added to any card to apply the animation.
+  The border is transparent by default to prevent the layout from shifting on hover.
+*/
+.card-animated-border {
+  border: 2px solid transparent;
+}
 
-/* Apply the animation on hover */
-.skillsText.card:hover {
+.card-animated-border:hover {
   animation: rainbow 4s linear infinite;
 }
+
 /* education */
 .eduIcon {
     width: 20%;
