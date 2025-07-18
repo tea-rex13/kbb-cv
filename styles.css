@@ -24,8 +24,10 @@
     color: white;
 }
 
-.imageProfilePage{
-    width: 100%;
+.imageProfilePage {
+  max-width: 100%;      /* still responsive in width */
+  height: 300px;        /* pick a height that looks good */
+  object-fit: cover;    /* crop/scale so it fills the box */
 }
 /* skills cards section */
 .skillsText.card {
@@ -191,7 +193,7 @@ hr.gradient {
   bottom: 1.5rem;
   right: 1.5rem;
   background: var(--brand-blue);
-  color: #0f1ae8;
+  color: #1e4c7a;
   padding: 0.5rem 1rem;
   border-radius: 4px;
   text-decoration: none;
