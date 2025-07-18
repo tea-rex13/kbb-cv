@@ -26,7 +26,7 @@
 
 .imageProfilePage {
   max-width: 100%;      /* still responsive in width */
-  height: 500px;        /* pick a height that looks good */
+  height: 450px;        /* pick a height that looks good */
   object-fit: cover;    /* crop/scale so it fills the box */
 }
 /* skills cards section */
