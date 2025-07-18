@@ -185,6 +185,17 @@ hr.gradient {
     background-color: #2e74bb;
     text-align: center;
 } 
+/* back to top */
+.back-to-top {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  background: var(--brand-blue);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  text-decoration: none;
+}
 
 /* dividers */
 /* Rounded border */
