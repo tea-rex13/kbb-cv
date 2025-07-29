@@ -34,7 +34,8 @@
 
 /* skills cards section */
 .skillsText.card {
-    height: 280px;
+    height: 100%;
+    min-height: 360px;  /* ensures a consistent height */
     cursor: pointer;  
 }
 
@@ -55,10 +56,15 @@
     text-align: center;
 }
 
-.card:hover .card-body {
-    
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.card:hover .card:body {
     color: #150453
-    
 }
 
 /* Define a keyframe animation for the rainbow effect */
@@ -73,7 +79,7 @@
   100% { border-color: red; }
 }
 /*
-  This new class can be added to any card to apply the animation.
+  The class can be added to any card to apply the animation.
   The border is transparent by default to prevent the layout from shifting on hover.
 */
 .card-animated-border {
@@ -98,8 +104,6 @@
     margin-left: auto;
     margin-right: auto;
 }
-
-
 
 /* display background colour on navbar scrolling */
 .navbarScroll.navbarDark {
@@ -130,24 +134,21 @@
 }
 #contact {
     padding-bottom: 5rem;
-
 }
 #projects{
     padding: 1em
 }
+
 /* social media icons styling */
 .social-icons {
     font-size: 36px;
     cursor: pointer;
- }
+}
 
 .fab {
     color: #ffffff;
 } 
 
-
-Result Skip Results Iframe
-EDIT ON
 .fab {
   color: inherit;
   text-decoration: none;
@@ -187,20 +188,20 @@ hr.gradient {
       rgba(255, 0, 180, 1) 51%,
       rgba(0, 100, 200, 1) 100%
     );
-  }
+}
 
 /* footer styling */
 #footer{
-   
     background-color: #2e74bb;
     text-align: center;
 } 
+/* Back to top button */
 .back-to-top {
   position: fixed;
   bottom: 1.5rem;
   right: 1.5rem;
   background: #2e74bb; /* A solid background colour */
-  color: #ffffff; /* White text for better contrast */
+  /*color: #ffffff;  White text for better contrast */
   padding: 0.5rem 1rem;
   border-radius: 4px;
   text-decoration: none;
@@ -220,17 +221,15 @@ hr.gradient {
 hr.rounded {
     border-top: 8px solid #bbb;
     border-radius: 5px;
-  }
+}
 
-.divider
-{
+.divider {
   position: relative;
   margin-top: 40px;
   height: 1px;
 }
 
-.div-transparent:before
-{
+.div-transparent:before {
   content: "";
   position: absolute;
   top: 0;
@@ -241,8 +240,7 @@ hr.rounded {
   background-image: linear-gradient(to right, transparent, rgb(48,49,51), transparent);
 }
 
-.div-dot:after
-{
+.div-dot:after {
   content: "";
   position: absolute;
   z-index: 1;
