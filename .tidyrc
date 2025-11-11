@@ -1,0 +1,15 @@
+doctype: html5
+char-encoding: utf8
+indent: auto
+indent-spaces: 2
+wrap: 0
+tidy-mark: no
+vertical-space: yes
+quiet: yes
+force-output: no
+show-errors: 6
+show-warnings: yes
+new-blocklevel-tags: article,aside,details,figcaption,figure,footer,header,main,nav,section,summary
+new-inline-tags: mark,svg,path,defs,pattern,animate,video,audio
+new-empty-tags: source,track
+error-file: -
