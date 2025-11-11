@@ -26,7 +26,7 @@
 
 .imageProfilePage {
   max-width: 100%;      /* remain responsive in width */
-  height: 400px;        /* a fixed height you choose */
+  height: 400px;        /* a fixed height */
   object-fit: cover;    /* ensures the image still fills/crops nicely */
   display: block;
   margin: 0 auto;       /* centre it horizontally in its col */
@@ -390,7 +390,7 @@ hr.rounded {
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
-  min-height: 360px; /* matches your earlier base height */
+  min-height: 360px; /* matches base height */
   width: 100%;
 }
 
