@@ -29,7 +29,7 @@
   height: 400px;        /* a fixed height you choose */
   object-fit: cover;    /* ensures the image still fills/crops nicely */
   display: block;
-  margin: 0 auto;       /* center it horizontally in its col */
+  margin: 0 auto;       /* centre it horizontally in its col */
 }
 
 /* skills cards section */
@@ -48,12 +48,12 @@
 
 .servicesIcon {
     font-size: 36px;
-    text-align: center;
+    text-align: centre;
     width: 100%;
 }
 
 .card-title {
-    text-align: center;
+    text-align: centre;
 }
 
 .card-body {
@@ -193,7 +193,7 @@ hr.gradient {
 /* footer styling */
 #footer{
     background-color: #2e74bb;
-    text-align: center;
+    text-align: centre;
 } 
 /* Back to top button */
 .back-to-top {
@@ -201,7 +201,7 @@ hr.gradient {
   bottom: 1.5rem;
   right: 1.5rem;
   background: #2e74bb; /* A solid background colour */
-  /*color: #ffffff;  White text for better contrast */
+  /* colour: #ffffff;  White text for better contrast */
   padding: 0.5rem 1rem;
   border-radius: 4px;
   text-decoration: none;
@@ -254,7 +254,8 @@ hr.rounded {
   box-shadow: inset 0 0 0 2px white,
           0 0 0 4px white;
 }
-/* Ensure education/project cards stay aligned */
+
+/* Ensure education/project cards stay aligned (base) */
 .education-grid .col,
 .projects-grid .col {
   display: flex;
@@ -278,4 +279,189 @@ hr.rounded {
 
 .project-screenshot {
   object-fit: cover;
+}
+
+/* ===================================================================== */
+/*                        NEW ALIGNMENT + RESPONSIVE FIXES               */
+/* ===================================================================== */
+
+/* === Consistent card sizing for Education and Projects (desktop defaults) === */
+.education-grid .card,
+.projects-grid .card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  min-height: 420px; /* desktop rhythm */
+}
+
+/* Standardise images across all cards */
+.education-grid .card img,
+.projects-grid .card img {
+  width: 100%;
+  height: 200px;             /* consistent visual block */
+  object-fit: cover;         /* screenshots look good; logos overridden below */
+  padding: 0;
+  border-bottom: 1px solid #e5e7eb;
+  background: #f9f9f9;
+}
+
+/* Keep buttons or last row aligned at the bottom */
+.education-grid .card-body,
+.projects-grid .card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.education-grid .card-body > div:last-child,
+.projects-grid .card-body > div:last-child {
+  margin-top: auto;
+}
+
+/* Logos should not be cropped */
+.education-grid .card img.eduIcon,
+.education-grid .card img.eduIcon2,
+.projects-grid .project-logo {
+  object-fit: contain;
+  background: #fff;
+  padding: 1rem;
+}
+
+/* Optional: clamp long text so rows align neatly */
+.education-grid .card-text,
+.projects-grid .card-text {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;    /* adjust to 2–4 lines to taste */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+}
+
+/* ---------- Tablets (≤ 992px) ---------- */
+@media (max-width: 991.98px) {
+  .education-grid .card,
+  .projects-grid .card {
+    min-height: 380px;
+  }
+
+  .education-grid .card img,
+  .projects-grid .project-logo,
+  .projects-grid .project-screenshot {
+    height: 180px;
+  }
+}
+
+/* ---------- Phones (≤ 576px) ---------- */
+@media (max-width: 575.98px) {
+  /* Cards stack, so drop fixed min-height */
+  .education-grid .card,
+  .projects-grid .card {
+    min-height: auto;
+  }
+
+  /* Shorter headers for tighter stack */
+  .education-grid .card img,
+  .projects-grid .project-logo,
+  .projects-grid .project-screenshot {
+    height: 160px;
+  }
+
+  .education-grid .card-body,
+  .projects-grid .card-body {
+    padding: 0.9rem 1rem;
+  }
+
+  /* Tighter clamp for small screens */
+  .education-grid .card-text,
+  .projects-grid .card-text {
+    -webkit-line-clamp: 2;
+  }
+}
+
+/* === Consistent alignment for Skills and Soft Skills === */
+#skills .col {
+  display: flex;
+}
+
+#skills .card.skillsText {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  min-height: 360px; /* matches your earlier base height */
+  width: 100%;
+}
+
+/* Icons */
+#skills .skillsIcon,
+#skills .servicesIcon {
+  width: 20%;
+  height: auto;
+  object-fit: contain;
+  margin: 0 auto 1rem;
+  display: block;
+}
+
+/* Keep content and progress bars aligned */
+#skills .card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#skills .progress {
+  margin-top: auto;
+}
+
+/* Clamp long paragraphs so rows stay level */
+#skills .card-text {
+  display: -webkit-box;
+  -webkit-line-clamp: 5;      /* desktop */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ---------- Skills: Tablets (≤ 992px) ---------- */
+@media (max-width: 991.98px) {
+  #skills .card.skillsText {
+    min-height: 320px;
+  }
+  #skills .skillsIcon,
+  #skills .servicesIcon {
+    width: 25%;
+  }
+  #skills .card-text {
+    -webkit-line-clamp: 4;
+  }
+}
+
+/* ---------- Skills: Phones (≤ 576px) ---------- */
+@media (max-width: 575.98px) {
+  #skills .card.skillsText {
+    min-height: auto;
+  }
+
+  /* Slightly smaller icons for stacked view */
+  #skills .skillsIcon,
+  #skills .servicesIcon {
+    width: 30%;
+    margin-bottom: 0.75rem;
+  }
+
+  /* Tighter padding and fonts */
+  #skills .card-body {
+    padding: 0.9rem 1rem;
+  }
+
+  #skills .card-title {
+    font-size: 1rem;
+  }
+
+  #skills .card-text {
+    font-size: 0.9rem;
+    -webkit-line-clamp: 3;    /* shorter copy on phones */
+  }
 }
