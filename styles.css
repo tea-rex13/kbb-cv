@@ -254,3 +254,28 @@ hr.rounded {
   box-shadow: inset 0 0 0 2px white,
           0 0 0 4px white;
 }
+/* Ensure education/project cards stay aligned */
+.education-grid .col,
+.projects-grid .col {
+  display: flex;
+}
+
+.education-grid .card,
+.projects-grid .card {
+  width: 100%;
+}
+
+.project-logo,
+.project-screenshot {
+  height: 220px;
+  width: 100%;
+}
+
+.project-logo {
+  object-fit: contain;
+  padding: 1.5rem;
+}
+
+.project-screenshot {
+  object-fit: cover;
+}
