@@ -117,68 +117,51 @@
     cursor: pointer;
 }
 
-.fab {
-    color: #ffffff;
-} 
-
-.fab {
-  color: inherit;
+.social-icons .fab {
+  color: #ffffff;
   text-decoration: none;
-}
-
-.fab {
-  color: inherit;
-  text-decoration: none;
+  transition: background-size 400ms;
   background:
-    linear-gradient(to right, rgba(100, 200, 200, 1), rgba(100, 200, 200, 1)),
-    linear-gradient(to right, rgba(255, 0, 0, 1), rgba(255, 0, 180, 1), rgba(0, 100, 200, 1));
+    linear-gradient(to right, rgba(100,200,200,1), rgba(100,200,200,1)),
+    linear-gradient(to right, rgba(255,0,0,1), rgba(255,0,180,1), rgba(0,100,200,1));
   background-size: 100% 3px, 0 3px;
   background-position: 100% 100%, 0 100%;
   background-repeat: no-repeat;
-  transition: background-size 400ms;
 }
-.fab:hover {
+
+.social-icons .fab:hover {
   background-size: 0 3px, 100% 3px;
 }
 
-hr.gradient {
-    height: 3px;
-    border: none;
-    border-radius: 6px;
-    background: linear-gradient(
-      90deg,
-      rgba(13, 8, 96, 1) 0%,
-      rgba(255, 0, 0, 1) 21%,
-      rgba(255, 0, 180, 1) 51%,
-      rgba(0, 100, 200, 1) 100%
-    );
-}
 
 /* footer styling */
 #footer{
     background-color: #2e74bb;
     text-align: centre;
-} 
-/* Back to top button */
 .back-to-top {
   position: fixed;
   bottom: 1.5rem;
   right: 1.5rem;
-  background: #2e74bb; /* A solid background colour */
-  /* colour: #ffffff;  White text for better contrast */
+  background: #2e74bb;      /* your original blue */
+  colour: #ffffff;          /* clear white text */
   padding: 0.5rem 1rem;
   border-radius: 4px;
   text-decoration: none;
-  /* opacity: 0; Hidden by default */
-  visibility: hidden; /* Also hide from assistive technologies */
-  transition: opacity 0.3s, visibility 0.3s; /* Add a smooth fade effect */
+  border: 1px solid #ffffff;  /* keeps the button edge visible on dark sections */
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s, visibility 0.3s;
 }
 
-/* This class will be added by JavaScript to show the button */
 .back-to-top.show {
-  opacity: 1;
   visibility: visible;
+  opacity: 1;
 }
+
+.back-to-top:hover {
+  background: #255f9a;     /* a darker shade for a clear hover cue */
+}
+
 
 /* dividers */
 /* Rounded border */
