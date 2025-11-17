@@ -300,6 +300,7 @@ hr.rounded {
   .projects-grid .card-text {
     -webkit-line-clamp: 2;
   }
+}
 
 /* === Skills & Soft Skills: robust equal-height + responsive behaviour === */
 
