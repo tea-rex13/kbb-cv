@@ -133,21 +133,23 @@
   background-size: 0 3px, 100% 3px;
 }
 
-
 /* footer styling */
-#footer{
-    background-color: #2e74bb;
-    text-align: centre;
+#footer {
+  background-color: #2e74bb;
+  text-align: center;   
+}
+
+/* Back to top button */
 .back-to-top {
   position: fixed;
   bottom: 1.5rem;
   right: 1.5rem;
-  background: #2e74bb;      /* your original blue */
-  colour: #ffffff;          /* clear white text */
+  background: #2e74bb;
+  color: #ffffff;       
   padding: 0.5rem 1rem;
   border-radius: 4px;
   text-decoration: none;
-  border: 1px solid #ffffff;  /* keeps the button edge visible on dark sections */
+  border: 1px solid #ffffff;
   visibility: hidden;
   opacity: 0;
   transition: opacity 0.3s, visibility 0.3s;
@@ -159,9 +161,8 @@
 }
 
 .back-to-top:hover {
-  background: #255f9a;     /* a darker shade for a clear hover cue */
+  background: #255f9a;
 }
-
 
 /* dividers */
 /* Rounded border */
@@ -203,7 +204,7 @@ hr.rounded {
 }
 
 /* ===================================================================== */
-/*                        NEW ALIGNMENT + RESPONSIVE FIXES               */
+/*                         ALIGNMENT + RESPONSIVE FIXES               */
 /* ===================================================================== */
 
 /* === Consistent card sizing for Education and Projects (desktop defaults) === */
@@ -254,7 +255,7 @@ hr.rounded {
 .education-grid .card-text,
 .projects-grid .card-text {
   display: -webkit-box;
-  -webkit-line-clamp: 3;    /* adjust to 2–4 lines to taste */
+  -webkit-line-clamp: 3;    
   -webkit-box-orient: vertical;
   overflow: hidden;
   margin-bottom: 0.5rem;
@@ -299,93 +300,7 @@ hr.rounded {
   .projects-grid .card-text {
     -webkit-line-clamp: 2;
   }
-}
 
-/* === Consistent alignment for Skills and Soft Skills === */
-#skills .col {
-  display: flex;
-}
-
-#skills .card.skillsText {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
-  min-height: 360px; /* matches base height */
-  width: 100%;
-}
-
-/* Icons */
-#skills .skillsIcon,
-#skills .servicesIcon {
-  width: 20%;
-  height: auto;
-  object-fit: contain;
-  margin: 0 auto 1rem;
-  display: block;
-}
-
-/* Keep content and progress bars aligned */
-#skills .card-body {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-#skills .progress {
-  margin-top: auto;
-}
-
-/* Clamp long paragraphs so rows stay level */
-#skills .card-text {
-  display: -webkit-box;
-  -webkit-line-clamp: 5;      /* desktop */
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-
-/* ---------- Skills: Tablets (≤ 992px) ---------- */
-@media (max-width: 991.98px) {
-  #skills .card.skillsText {
-    min-height: 320px;
-  }
-  #skills .skillsIcon,
-  #skills .servicesIcon {
-    width: 25%;
-  }
-  #skills .card-text {
-    -webkit-line-clamp: 4;
-  }
-}
-
-/* ---------- Skills: Phones (≤ 576px) ---------- */
-@media (max-width: 575.98px) {
-  #skills .card.skillsText {
-    min-height: auto;
-  }
-
-  /* Slightly smaller icons for stacked view */
-  #skills .skillsIcon,
-  #skills .servicesIcon {
-    width: 30%;
-    margin-bottom: 0.75rem;
-  }
-
-  /* Tighter padding and fonts */
-  #skills .card-body {
-    padding: 0.9rem 1rem;
-  }
-
-  #skills .card-title {
-    font-size: 1rem;
-  }
-
-  #skills .card-text {
-    font-size: 0.9rem;
-    -webkit-line-clamp: 3;    /* shorter copy on phones */
-  }
-}
 /* === Skills & Soft Skills: robust equal-height + responsive behaviour === */
 
 /* Treat any Bootstrap column in #skills as a flex item */
@@ -458,4 +373,15 @@ hr.rounded {
   #skills .card-body { padding: 0.9rem 1rem; }
   #skills .card-title { font-size: 1rem; }
   #skills .card-text { font-size: 0.9rem; -webkit-line-clamp: 3; }
+}
+/* Make the mod.io logo visually identical to the skills icons */
+.projects-grid .project-logo {
+  height: 60px;          /* identical height */
+  width: auto;           /* keep natural proportions */
+  object-fit: contain;   /* prevent cropping */
+  margin: 0 auto 1rem;   /* same bottom spacing as skills icons */
+  display: block;
+  padding: 0;            /* match skills icons */
+  background: transparent;
+  border-bottom: none;   /* remove header divider line */
 }
