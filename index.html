@@ -4,8 +4,7 @@
     <link rel="icon" href="/favicon_io/android-chrome-512x512.png" sizes="32x32" type="image/png">
     <link rel="icon" href="/favicon_io/android-chrome-192x192.png" sizes="16x16" type="image/png">
     <link rel="icon" href="/favicon_io/apple-touch-icon.png" sizes="32x32" type="image/png">
-    
-    
+    <link rel="stylesheet" href="/widget/styles.css">
 
 
     
@@ -448,7 +447,47 @@
     <a href="#home" class="back-to-top">↑ Back to top</a>
     <!-- load javascript: -->
     <script src="script/script.js"></script>
-   
+<!-- Chat button + panel (copied from widget/index.html) -->
+<button
+    id="chat-toggle"
+    class="chat-toggle"
+    type="button"
+    aria-label="Open chat"
+>
+    Chat
+</button>
+
+<div id="chat-panel" class="chat-panel hidden" aria-hidden="true">
+    <header class="chat-panel__header">
+        <h2 class="chat-panel__title">Kit’s AI Assistant</h2>
+        <button
+            id="chat-close"
+            class="chat-panel__close"
+            type="button"
+            aria-label="Close chat"
+        >
+            ×
+        </button>
+    </header>
+
+    <div class="chat-panel__messages" id="chat-messages">
+        <!-- Messages will be added here by JavaScript -->
+    </div>
+
+    <form class="chat-panel__input-row" id="chat-form">
+        <input
+            type="text"
+            id="chat-input"
+            class="chat-panel__input"
+            placeholder="Type a message..."
+            autocomplete="off"
+        >
+        <button type="submit" class="chat-panel__send">Send</button>
+    </form>
+</div>
+
+<script src="/widget/widget.js"></script>
+
 </body>
 </html>
 

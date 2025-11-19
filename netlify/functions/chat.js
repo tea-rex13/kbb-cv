@@ -1,11 +1,4 @@
-import OpenAI from "openai";
-
-const client = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-});
-
 export async function handler(event) {
-  // Only allow POST
   if (event.httpMethod !== "POST") {
     return {
       statusCode: 405,
@@ -15,6 +8,16 @@ export async function handler(event) {
   }
 
   try {
+    const apiKey = process.env.OPENAI_API_KEY;
+    if (!apiKey) {
+      console.error("Missing OPENAI_API_KEY");
+      return {
+        statusCode: 500,
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ error: "Server misconfiguration: missing API key" }),
+      };
+    }
+
     const { message } = JSON.parse(event.body || "{}");
 
     if (!message || typeof message !== "string") {
@@ -25,17 +28,46 @@ export async function handler(event) {
       };
     }
 
-    // Call OpenAI Responses API
-    const response = await client.responses.create({
-      model: "gpt-4o-mini",
-      instructions:
-        "You are a concise, friendly assistant for Kit Baker-Bassett’s portfolio site. " +
-        "Give short, clear answers. If asked about Kit, respond in the third person.",
-      input: message,
+    // Call OpenAI Responses API via HTTP
+    const response = await fetch("https://api.openai.com/v1/responses", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${apiKey}`,
+      },
+      body: JSON.stringify({
+        model: "gpt-4o-mini",
+        instructions:
+          "You are a concise, friendly assistant for Kit Baker-Bassett’s portfolio site. " +
+          "Answer clearly and briefly. If asked about Kit, speak in the third person.",
+        input: message,
+      }),
     });
 
-    // Convenient short-text helper
-    const reply = response.output_text || "Sorry, I could not produce a reply.";
+    if (!response.ok) {
+      const errorText = await response.text();
+      console.error("OpenAI error:", response.status, errorText);
+      return {
+        statusCode: 502,
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          error: "Error from AI service",
+        }),
+      };
+    }
+
+    const data = await response.json();
+
+    // Responses API returns output in different formats; this helper covers text
+    const reply =
+      data.output_text ||
+      (Array.isArray(data.output) &&
+        data.output[0] &&
+        data.output[0].content &&
+        data.output[0].content[0] &&
+        data.output[0].content[0].text &&
+        data.output[0].content[0].text.value) ||
+      "Sorry, I could not produce a reply.";
 
     return {
       statusCode: 200,
