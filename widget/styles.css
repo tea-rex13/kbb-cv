@@ -68,6 +68,10 @@ main {
 .hidden {
     display: none;
 }
+/* Utility: hide the chat panel when .hidden is applied */
+.chat-panel.hidden {
+    display: none;
+}
 
 /* Chat panel */
 
