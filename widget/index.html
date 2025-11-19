@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kit’s AI Chat Widget – Test Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <main>
+        <h1>AI Chat Widget Test</h1>
+        <p>This is just a test page for the floating chat button.</p>
+    </main>
+
+    <!-- Floating chat button -->
+    <button
+        id="chat-toggle"
+        class="chat-toggle"
+        type="button"
+        aria-label="Open chat"
+    >
+        Chat
+    </button>
+
+    <!-- Chat panel -->
+    <div id="chat-panel" class="chat-panel hidden" aria-hidden="true">
+        <header class="chat-panel__header">
+            <h2 class="chat-panel__title">Kit’s AI Assistant</h2>
+            <button
+                id="chat-close"
+                class="chat-panel__close"
+                type="button"
+                aria-label="Close chat"
+            >
+                ×
+            </button>
+        </header>
+
+        <div class="chat-panel__messages" id="chat-messages">
+            <!-- Messages will be added here by JavaScript -->
+        </div>
+
+        <form class="chat-panel__input-row" id="chat-form">
+            <input
+                type="text"
+                id="chat-input"
+                class="chat-panel__input"
+                placeholder="Type a message..."
+                autocomplete="off"
+            >
+            <button type="submit" class="chat-panel__send">Send</button>
+        </form>
+    </div>
+
+    <script src="widget.js"></script>
+</body>
+</html>
