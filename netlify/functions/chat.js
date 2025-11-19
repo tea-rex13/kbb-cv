@@ -49,10 +49,16 @@ exports.handler = async function (event) {
     if (!response.ok) {
       const errorText = await response.text();
       console.error("OpenAI error:", response.status, errorText);
+
+      // TEMP: surface more details so we can see what is wrong
       return {
         statusCode: 502,
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ error: "Error from AI service" }),
+        body: JSON.stringify({
+          error: "Error from AI service",
+          status: response.status,
+          details: errorText,
+        }),
       };
     }
 
