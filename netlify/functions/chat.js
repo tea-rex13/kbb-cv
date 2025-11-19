@@ -1,4 +1,6 @@
-export async function handler(event) {
+// netlify/functions/chat.js
+
+exports.handler = async function (event) {
   if (event.httpMethod !== "POST") {
     return {
       statusCode: 405,
@@ -50,24 +52,21 @@ export async function handler(event) {
       return {
         statusCode: 502,
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          error: "Error from AI service",
-        }),
+        body: JSON.stringify({ error: "Error from AI service" }),
       };
     }
 
     const data = await response.json();
 
-    // Responses API returns output in different formats; this helper covers text
-    const reply =
-      data.output_text ||
-      (Array.isArray(data.output) &&
-        data.output[0] &&
-        data.output[0].content &&
-        data.output[0].content[0] &&
-        data.output[0].content[0].text &&
-        data.output[0].content[0].text.value) ||
-      "Sorry, I could not produce a reply.";
+    // Extract assistant text from Responses API structure
+    let reply = "Sorry, I could not produce a reply.";
+    try {
+      const messageObj = data.output?.[0];
+      const contentItem = messageObj?.content?.[0];
+      reply = contentItem?.text?.value || reply;
+    } catch (e) {
+      // leave default reply
+    }
 
     return {
       statusCode: 200,
@@ -85,4 +84,4 @@ export async function handler(event) {
       }),
     };
   }
-}
+};
