@@ -10,6 +10,15 @@ window.onscroll = function() {
         header.classList.remove('navbarDark');
     }
 }
+// Close mobile navbar when a nav link is clicked
+document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+        const navbar = document.querySelector('.navbar-collapse');
+        const bsCollapse = new bootstrap.Collapse(navbar, { toggle: false });
+        bsCollapse.hide();
+    });
+});
+
 // Wait for the document to be fully loaded before running the script
 document.addEventListener('DOMContentLoaded', function() {
 

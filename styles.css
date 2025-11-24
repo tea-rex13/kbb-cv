@@ -32,6 +32,15 @@
     display: block;
     margin: 0 auto;       /* centre it horizontally in its col */
 }
+/* Make anchor jumps account for the fixed navbar */
+html {
+    scroll-behavior: smooth;     /* optional: nice smooth scrolling */
+}
+
+/* Add an offset so section titles are visible below the navbar */
+section[id] {
+    scroll-margin-top: 80px;     /* adjust this value to match your navbar height */
+}
 
 /* Define a keyframe animation for the rainbow effect */
 @keyframes rainbow {
