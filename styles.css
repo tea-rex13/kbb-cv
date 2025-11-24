@@ -3,6 +3,45 @@
     height: 100vh;
     position: relative;
 }
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+
+  /* smooth, continuous gradient */
+  background: linear-gradient(
+    45deg,
+    #1b72a0 0%,
+    #2196f3 20%,
+    #6aa7c9 50%,
+    #b9dcf2 80%,
+    #0b3a63 100%
+  );
+
+  /* enlarge to avoid visible banding at section edges */
+  background-size: 600% 600%;
+
+  /* slow, subtle movement */
+  animation: background 18s ease infinite;
+}
+
+@keyframes background { 
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 /* text above main (hero) background */
 .hero_title {
     font-size: 4rem;
