@@ -89,7 +89,16 @@ form.addEventListener('submit', async (e) => {
         typingMsg.remove();
         addMessage(reply, 'bot');
     } catch (err) {
-        typingMsg.textContent = "Something went wrong.";
-        typingMsg.classList.remove('typing');
+    console.error(err);
+
+    // If the backend gave us quota info, show a softer message
+    if (err.message && err.message.includes("429")) {
+        typingMsg.textContent = "The assistant is currently offline due to API limits.";
+    } else {
+        typingMsg.textContent = "I could not reach my server. Please try again later.";
     }
+
+    typingMsg.classList.remove('typing');
+}
+
 });
