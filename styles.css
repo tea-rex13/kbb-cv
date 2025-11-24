@@ -1,8 +1,6 @@
 /* main (hero) background */
 .bgimage {
     height: 100vh;
-    background: linear-gradient(to bottom right, #1B72A0, #6AA7C9, #B9DCF2);
-    background-size: cover;
     position: relative;
 }
 /* text above main (hero) background */
