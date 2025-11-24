@@ -5,11 +5,10 @@
     background-size: cover;
     position: relative;
 }
-
 /* text above main (hero) background */
 .hero_title {
     font-size: 4rem;
-    font-family: "Roboto", sans-serif;
+    font-family: "Roboto",sans-serif;
 }
 
 .hero_desc {
@@ -26,44 +25,34 @@
 }
 
 .imageProfilePage {
-    max-width: 100%;      /* remain responsive in width */
-    height: 400px;        /* a fixed height */
-    object-fit: cover;    /* ensures the image still fills/crops nicely */
-    display: block;
-    margin: 0 auto;       /* centre it horizontally in its col */
-}
-/* Make anchor jumps account for the fixed navbar */
-html {
-    scroll-behavior: smooth;     /* optional: nice smooth scrolling */
-}
-
-/* Add an offset so section titles are visible below the navbar */
-section[id] {
-    scroll-margin-top: 80px;     /* adjust this value to match your navbar height */
+  max-width: 100%;      /* remain responsive in width */
+  height: 400px;        /* a fixed height */
+  object-fit: cover;    /* ensures the image still fills/crops nicely */
+  display: block;
+  margin: 0 auto;       /* centre it horizontally in its col */
 }
 
 /* Define a keyframe animation for the rainbow effect */
 @keyframes rainbow {
-    0% { border-color: red; }
-    14% { border-color: orange; }
-    28% { border-color: yellow; }
-    42% { border-color: green; }
-    56% { border-color: blue; }
-    70% { border-color: indigo; }
-    84% { border-color: violet; }
-    100% { border-color: red; }
+  0% { border-color: red; }
+  14% { border-color: orange; }
+  28% { border-color: yellow; }
+  42% { border-color: green; }
+  56% { border-color: blue; }
+  70% { border-color: indigo; }
+  84% { border-color: violet; }
+  100% { border-color: red; }
 }
-
 /*
   The class can be added to any card to apply the animation.
   The border is transparent by default to prevent the layout from shifting on hover.
 */
 .card-animated-border {
-    border: 2px solid transparent;
+  border: 2px solid transparent;
 }
 
 .card-animated-border:hover {
-    animation: rainbow 4s linear infinite;
+  animation: rainbow 4s linear infinite;
 }
 
 /* display background colour on navbar scrolling */
@@ -72,8 +61,7 @@ section[id] {
 }
 
 /* spacing and padding to sections */
-#profile,
-#skills {
+#profile, #skills {
     margin-top: 2rem;
     padding-bottom: 2rem;
 }
@@ -82,13 +70,11 @@ section[id] {
 * {
     font-family: "montserrat", sans-serif, monospace;
 }
-
 #contact {
     padding-bottom: 5rem;
 }
-
-#projects {
-    padding: 1em;
+#projects{
+    padding: 1em
 }
 
 /* social media icons styling */
@@ -98,217 +84,215 @@ section[id] {
 }
 
 .social-icons .fab {
-    color: #ffffff;
-    text-decoration: none;
-    transition: background-size 400ms;
-    background:
-        linear-gradient(to right, rgba(100, 200, 200, 1), rgba(100, 200, 200, 1)),
-        linear-gradient(to right, rgba(255, 0, 0, 1), rgba(255, 0, 180, 1), rgba(0, 100, 200, 1));
-    background-size: 100% 3px, 0 3px;
-    background-position: 100% 100%, 0 100%;
-    background-repeat: no-repeat;
+  color: #ffffff;
+  text-decoration: none;
+  transition: background-size 400ms;
+  background:
+    linear-gradient(to right, rgba(100,200,200,1), rgba(100,200,200,1)),
+    linear-gradient(to right, rgba(255,0,0,1), rgba(255,0,180,1), rgba(0,100,200,1));
+  background-size: 100% 3px, 0 3px;
+  background-position: 100% 100%, 0 100%;
+  background-repeat: no-repeat;
 }
 
 .social-icons .fab:hover {
-    background-size: 0 3px, 100% 3px;
+  background-size: 0 3px, 100% 3px;
 }
 
 /* footer styling */
 #footer {
-    background-color: #2e74bb;
-    text-align: center;
+  background-color: #2e74bb;
+  text-align: center;   
 }
 
 /* Back to top button */
 .back-to-top {
-    position: fixed;
-    bottom: 1.5rem;
-    right: 1.5rem;
-    background: #2e74bb;
-    color: #ffffff;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    text-decoration: none;
-    border: 1px solid #ffffff;
-    visibility: hidden;
-    opacity: 0;
-    transition: opacity 0.3s, visibility 0.3s;
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  background: #2e74bb;
+  color: #ffffff;       
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  text-decoration: none;
+  border: 1px solid #ffffff;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s, visibility 0.3s;
 }
 
 .back-to-top.show {
-    visibility: visible;
-    opacity: 1;
+  visibility: visible;
+  opacity: 1;
 }
 
 .back-to-top:hover {
-    background: #255f9a;
+  background: #255f9a;
 }
 
 /* ===================================================================== */
-/*                         ALIGNMENT + RESPONSIVE FIXES                  */
+/*                         ALIGNMENT + RESPONSIVE FIXES               */
 /* ===================================================================== */
 
 /* === Consistent card sizing for Education and Projects (desktop defaults) === */
 .education-grid .card,
 .projects-grid .card {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
-    min-height: 420px; /* desktop rhythm */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  min-height: 420px; /* desktop rhythm */
+}
+
+/* Standardise images across all cards */
+.education-grid .card img,
+.projects-grid .card img {
+  width: 100%;
+  height: 200px;             /* consistent visual block */
+  object-fit: cover;         /* screenshots look good; logos overridden below */
+  padding: 0;
+  border-bottom: 1px solid #e5e7eb;
+  background: #f9f9f9;
 }
 
 /* Keep buttons or last row aligned at the bottom */
 .education-grid .card-body,
 .projects-grid .card-body {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .education-grid .card-body > div:last-child,
 .projects-grid .card-body > div:last-child {
-    margin-top: auto;
+  margin-top: auto;
 }
 
 /* Optional: clamp long text so rows align neatly */
 .education-grid .card-text,
 .projects-grid .card-text {
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    margin-bottom: 0.5rem;
-}
-
-/* Shared logo styling for all cards */
-.card-logo {
-    height: 200px;         /* desktop default */
-    width: 100%;
-    object-fit: contain;   /* no cropping */
-    padding: 1rem;         /* breathing room */
-    background: #fff;      /* same backdrop on all cards */
-    display: block;
-    margin: 0 auto 1rem;
-    border-bottom: 1px solid #e5e7eb;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;    
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
 }
 
 /* ---------- Tablets (≤ 992px) ---------- */
 @media (max-width: 991.98px) {
-    .education-grid .card,
-    .projects-grid .card {
-        min-height: 380px;
-    }
+  .education-grid .card,
+  .projects-grid .card {
+    min-height: 380px;
+  }
 
-    .card-logo {
-        height: 180px;
-    }
+  .education-grid .card img,
+  .projects-grid .project-logo,
+  .projects-grid .project-screenshot {
+    height: 180px;
+  }
 }
 
 /* ---------- Phones (≤ 576px) ---------- */
 @media (max-width: 575.98px) {
-    /* Cards stack, so drop fixed min-height */
-    .education-grid .card,
-    .projects-grid .card {
-        min-height: auto;
-    }
+  /* Cards stack, so drop fixed min-height */
+  .education-grid .card,
+  .projects-grid .card {
+    min-height: auto;
+  }
 
-    /* Shorter headers for tighter stack */
-    .card-logo {
-        height: 160px;
-    }
+  /* Shorter headers for tighter stack */
+  .education-grid .card img,
+  .projects-grid .project-logo,
+  .projects-grid .project-screenshot {
+    height: 160px;
+  }
 
-    .education-grid .card-body,
-    .projects-grid .card-body {
-        padding: 0.9rem 1rem;
-    }
+  .education-grid .card-body,
+  .projects-grid .card-body {
+    padding: 0.9rem 1rem;
+  }
 
-    /* Tighter clamp for small screens */
-    .education-grid .card-text,
-    .projects-grid .card-text {
-        -webkit-line-clamp: 2;
-    }
+  /* Tighter clamp for small screens */
+  .education-grid .card-text,
+  .projects-grid .card-text {
+    -webkit-line-clamp: 2;
+  }
 }
 
 /* === Skills & Soft Skills: robust equal-height + responsive behaviour === */
 
 /* Treat any Bootstrap column in #skills as a flex item */
 #skills .row > [class*="col"] {
-    display: flex;
+  display: flex;
 }
 
 /* Make each card fill its column and align bottoms */
 #skills .card.skillsText {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 100%;
-    height: 100%;
-    min-height: 360px; /* desktop/tablet baseline */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  min-height: 360px; /* desktop/tablet baseline */
 }
 
 #skills .servicesIcon {
-    font-size: 60px;       /* match visual size to header image */
-    line-height: 1;
-    display: block;
-    margin: 0 auto 1rem;
-    width: auto;
+  font-size: 60px;       /* match visual size to 60px img height */
+  line-height: 1;
+  display: block;
+  margin: 0 auto 1rem;
+  width: auto;
 }
 
 /* Body flex so progress bars sit at the bottom */
 #skills .card-body {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
-
 #skills .progress {
-    margin-top: auto;
+  margin-top: auto;
 }
 
-/* Clamp long copy so one wordy card does not stretch the row */
+/* Clamp long copy so one wordy card doesn’t stretch the row */
 #skills .card-text {
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 5;   /* desktop default */
-    overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;   /* desktop default */
+  overflow: hidden;
 }
 
 /* --- Tablet (≤ 992px) --- */
 @media (max-width: 991.98px) {
-    #skills .card.skillsText {
-        min-height: 320px;
-    }
-    #skills .servicesIcon {
-        font-size: 54px;
-    }
-    #skills .card-text {
-        -webkit-line-clamp: 4;
-    }
+  #skills .card.skillsText { min-height: 320px; }
+  #skills .skillsIcon { height: 54px; }
+  #skills .servicesIcon { font-size: 54px; }
+  #skills .card-text { -webkit-line-clamp: 4; }
 }
 
 /* --- Phone (≤ 576px) --- */
 @media (max-width: 575.98px) {
-    /* Stacked cards: drop fixed heights so they feel compact */
-    #skills .card.skillsText {
-        min-height: auto;
-    }
+  /* Stacked cards: drop fixed heights so they feel compact */
+  #skills .card.skillsText { min-height: auto; }
 
-    /* Smaller visual header */
-    #skills .servicesIcon {
-        font-size: 48px;
-    }
+  /* Smaller visual header */
+  #skills .skillsIcon { height: 48px; }
+  #skills .servicesIcon { font-size: 48px; }
 
-    /* Tighter spacing and shorter text clamp */
-    #skills .card-body {
-        padding: 0.9rem 1rem;
-    }
-    #skills .card-title {
-        font-size: 1rem;
-    }
-    #skills .card-text {
-        font-size: 0.9rem;
-        -webkit-line-clamp: 3;
-    }
+  /* Tighter spacing and shorter text clamp */
+  #skills .card-body { padding: 0.9rem 1rem; }
+  #skills .card-title { font-size: 1rem; }
+  #skills .card-text { font-size: 0.9rem; -webkit-line-clamp: 3; }
+}
+
+.card-logo {
+    height: 120px;       /* nice even height across all cards */
+    width: 100%;         /* takes full width of card */
+    object-fit: contain; /* no cropping */
+    padding: 1rem;       /* breathing room */
+    background: #fff;    /* same backdrop on all cards */
+    display: block;
+    margin: 0 auto 1rem;
+    border-bottom: 1px solid #e5e7eb;
 }
